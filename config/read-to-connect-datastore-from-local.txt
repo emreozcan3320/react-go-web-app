@@ -1,0 +1,8 @@
+The json file ,which you downloaded from GCP I&AM credential, 
+to connect to the datastore is going to place this directory 
+for local development purpose. 
+
+                ############################
+                ###      IMPORTANT       ###
+                ############################
+!! ADD THAT .JSON TO .GITIGNORE DO NOT PUSH REPOSITORY
