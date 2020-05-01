@@ -1,2 +1,3 @@
 vendor
 config/golang-web-app.json
+config/read-to-connect-datastore-from-local.txt
