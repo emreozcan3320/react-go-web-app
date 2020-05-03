@@ -13,7 +13,6 @@ import (
 	"github.com/emre/react-golang-web-app/model"
 )
 
-
 // Init quotes var as slice Quote Struct
 var datastoreClient *datastore.Client
 
@@ -55,7 +54,7 @@ func createQuotes(w http.ResponseWriter,r *http.Request){
 		http.Error(w, decodeErr.Error(), http.StatusBadRequest)
 		
 	}
-	quote.Created = time.Now();
+	quote.Created = time.Now().Format("2006-01-02");
 
 	savedQuote, dbErr := repository.CreateQuote(ctx, datastoreClient, quote)
 	if dbErr != nil {
@@ -121,7 +120,7 @@ func dbInitializer(){
 			Quote:"May the Force be with you",
 			Reference:"Starwars",
 			Owner:"Jedi",
-			Created: time.Now(),
+			Created: time.Now().Format("2006-01-02"),
 		}); dbErr != nil {
 			log.Printf("Failed to write quote: %v", dbErr)
 		}
@@ -130,7 +129,7 @@ func dbInitializer(){
 			Quote:"Great leaders inspire greatness in others.",
 			Reference:"Star Wars: The Clone Wars",
 			Owner:"01×01 – Ambush -- opening quote",
-			Created: time.Now(),
+			Created: time.Now().Format("2006-01-02"),
 		}); dbErr != nil {
 			log.Printf("Failed to write quote: %v", dbErr)
 		}
@@ -139,7 +138,7 @@ func dbInitializer(){
 			Quote:"Belief is not a matter of choice, but of conviction.",
 			Reference:"Star Wars: The Clone Wars",
 			Owner:"01×02 – Rising Malevolence -- opening quote",
-			Created: time.Now(),
+			Created: time.Now().Format("2006-01-02"),
 		}); dbErr != nil {
 			log.Printf("Failed to write quote: %v", dbErr)
 		}
